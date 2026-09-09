@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: warlens
+    env: python
+    buildCommand: pip install -r WARLENS/requirements.txt
+    startCommand: gunicorn --chdir WARLENS app:app
