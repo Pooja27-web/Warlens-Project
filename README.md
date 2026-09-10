@@ -1,20 +1,25 @@
 # Warlens-Project
 
-WarLens is an NLP-powered news analysis and dataset dashboard built with Flask,
-Python, and SQLite. It includes CRUD REST API endpoints and text vectorization
-models.
+WarLens is an NLP-powered news analysis and dataset dashboard built with
+Streamlit, Python, and SQLite. It includes news CRUD controls and text
+vectorization models.
 
-## Deploy on Render
+## Deploy on Streamlit Community Cloud
 
-This repository is configured for a direct Render deployment:
+1. Push this repository to GitHub.
+2. Open https://share.streamlit.io/ and sign in with GitHub.
+3. Select this repository and the `main` branch.
+4. Set the main file path to `WARLENS/streamlit_app.py`.
+5. Click **Deploy**.
 
-1. Connect this GitHub repository to a new Render Web Service.
-2. Select the `main` branch.
-3. Render will use the root `render.yaml` automatically.
-4. If entering commands manually, use:
+Streamlit Cloud installs dependencies from `WARLENS/requirements.txt`.
+The application initializes the SQLite database and seeds the bundled dataset
+on its first run.
 
-   - Build command: `pip install -r WARLENS/requirements.txt`
-   - Start command: `gunicorn --chdir WARLENS app:app`
+## Run locally
 
-The Flask application is located in `WARLENS/`, and Render serves it through
-the Gunicorn WSGI entry point `app:app`.
+```text
+cd WARLENS
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
