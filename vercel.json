@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "WARLENS/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "WARLENS/app.py"
+    }
+  ]
+}
